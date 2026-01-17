@@ -1,0 +1,29 @@
+# Core API
+fastapi
+uvicorn
+pydantic
+
+# Data processing
+numpy
+pandas
+
+# Vector Database
+qdrant-client
+
+# LLM & Embeddings (Google Gemini)
+google-genai
+
+# Web scraping
+beautifulsoup4
+requests
+
+# UI
+streamlit
+
+# Utils
+tqdm
+python-dotenv
+
+scikit-learn
+
+openpyxl
