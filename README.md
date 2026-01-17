@@ -158,9 +158,9 @@ shl_recommender/
 ├── app.py                          # Pure RAG API (no sentence-transformers!)
 ├── evaluate.py                     # Evaluation
 ├── streamlit_ui.py                 # Web UI
-├── scraper.py                      # Your existing scraper
-├── convert_dataset.py              # Your existing converter
-├── requirements_rag.txt       # Dependencies
+├── scraper.py                      # Scraper
+├── convert_dataset.py              # Train-Test Spliter
+├── requirements_rag.txt            # Dependencies
 ├── .env                            # API keys
 └── data/
     ├── shl_assessments_complete.json
@@ -201,19 +201,3 @@ python evaluate.py
 # 8. Launch UI (Terminal 3, optional)
 streamlit run streamlit_ui.py
 ```
-
----
-
-## -> Key Differences from NLP based approach
-
-| Aspect | NLP based System | This Pure RAG System |
-|--------|--------------------|--------------------|
-| **Embeddings** | Local (sentence-transformers) | Gemini API |
-| **Vector DB** | ChromaDB | Qdrant |
-| **Query Enhancement** | None | LLM-based |
-| **Re-ranking** | None | LLM-based |
-| **Balancing** | None | Smart test-type mixing |
-| **API Calls in app.py** | Cohere (insights only) | Gemini (embeddings + LLM) |
-| **Local ML Models** | Yes (in app.py) | No (pure API) |
-
-**Advantage:** No need to load/manage local models in app.py. Everything happens via Gemini API, making deployment easier and more scalable.
