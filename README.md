@@ -8,8 +8,8 @@ This is a **Pure LLM-RAG system** using:
 
 Backend URL- https://rag-assessment-recommender.onrender.com
 Streamlit URL- 
-
 Note:- After three weeks of inactivity, the Qdrant server became inactive.
+
 ---
 
 ## -> System Architecture
