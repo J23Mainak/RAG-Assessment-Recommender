@@ -1,4 +1,4 @@
-## Overview- What Makes This Different?
+## Overview- What makes this different?
 
 This is a **Pure LLM-RAG system** using:
 - **Gemini Embeddings API** (no local sentence-transformers needed)
@@ -119,9 +119,7 @@ curl -X POST http://localhost:8000/recommend \
 
 ---
 
-## -> Step 6: Prepare Test Data
-
-**Use your existing `convert_dataset.py`:**
+## > Step 6: Prepare Test Data
 
 ```bash
 python convert_dataset.py
@@ -133,7 +131,7 @@ python convert_dataset.py
 
 ---
 
-## -> Step 7: Evaluate Performance
+## > Step 7: Evaluate Performance
 
 In a **new terminal** (keep API running):
 
