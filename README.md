@@ -6,6 +6,10 @@ This is a **Pure LLM-RAG system** using:
 - **Multi-stage LLM pipeline**
 - **No issues in deployment**
 
+Backend URL- https://rag-assessment-recommender.onrender.com
+Streamlit URL- 
+
+Note:- After three weeks of inactivity, the Qdrant server became inactive.
 ---
 
 ## -> System Architecture
