@@ -7,7 +7,8 @@ This is a **Pure LLM-RAG system** using:
 - **No issues in deployment**
 
 Backend URL- https://rag-assessment-recommender.onrender.com
-Streamlit URL- 
+Streamlit URL- https://rag-assessment-recommenders.streamlit.app
+
 Note:- After three weeks of inactivity, the Qdrant server became inactive.
 
 ---
