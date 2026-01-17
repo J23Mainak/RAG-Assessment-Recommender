@@ -5,7 +5,7 @@ import os
 from config import API_PORT, FINAL_K_MAX, FINAL_K_MIN
 
 # Default API URL (config.py -> API_PORT) but allow override
-DEFAULT_API_URL = os.getenv("RECOMMENDER_API_URL", f"http://localhost:{API_PORT}")
+DEFAULT_API_URL = os.getenv("RECOMMENDER_API_URL", f"https://rag-assessment-recommender.onrender.com")
 
 st.set_page_config(
     page_title="Assessment test Recommender",
