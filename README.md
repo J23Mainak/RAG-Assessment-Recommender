@@ -10,7 +10,7 @@ Backend URL- https://rag-assessment-recommender.onrender.com
 
 Streamlit URL- https://rag-assessment-recommenders.streamlit.app
 
-Note:- After three weeks of inactivity, the Qdrant server became inactive.
+**Note:-** After three weeks of inactivity, the Qdrant server became inactive. The Streamlit server went down after few days due to Streamlit Cloud's auto-suspension policy. To reactivate both services, redeploy the application on Streamlit Cloud. You may need to rerun the app several times if initial API connection errors occur.
 
 ---
 
