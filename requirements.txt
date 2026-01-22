@@ -18,7 +18,7 @@ beautifulsoup4
 requests
 
 # UI
-streamlit
+streamlit>=1.30
 
 # Utils
 tqdm
