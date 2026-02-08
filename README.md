@@ -1,4 +1,8 @@
-## Overview- What makes this different?
+## Extension of NLP based Recommender
+
+Backend URL- https://rag-assessment-recommender.onrender.com
+
+Streamlit URL- https://rag-assessment-recommenders.streamlit.app
 
 This is a **Pure LLM-RAG system** using:
 - **Gemini Embeddings API** (no local sentence-transformers needed)
@@ -6,15 +10,9 @@ This is a **Pure LLM-RAG system** using:
 - **Multi-stage LLM pipeline**
 - **No issues in deployment**
 
-Backend URL- https://rag-assessment-recommender.onrender.com
+***Note:-*** After three weeks of inactivity, the Qdrant server became inactive. The Streamlit server went down after few days due to Streamlit Cloud's auto-suspension policy. To reactivate both services, redeploy the application on Streamlit Cloud. You may need to rerun the app several times if initial API connection errors occur.
 
-Streamlit URL- https://rag-assessment-recommenders.streamlit.app
-
-**Note:-** After three weeks of inactivity, the Qdrant server became inactive. The Streamlit server went down after few days due to Streamlit Cloud's auto-suspension policy. To reactivate both services, redeploy the application on Streamlit Cloud. You may need to rerun the app several times if initial API connection errors occur.
-
----
-
-## -> System Architecture
+## System Architecture
 
 ```
 User Query
@@ -30,9 +28,7 @@ Smart Balancing → Mix K (technical) + P (behavioral)
 Top 5-10 Recommendations
 ```
 
----
-
-## > Step 1: Install Dependencies
+## 1) Install Dependencies
 
 ```bash
 # Create virtual environment
@@ -48,9 +44,7 @@ source .venv/bin/activate
 pip install -r requirements_rag.txt
 ```
 
----
-
-## > Step 2: Set API Key
+## 2) Set API Key
 
 Create a `.env` file:
 
@@ -64,9 +58,7 @@ QDRANT_API_KEY=your_qdrant_api
 QDRANT_COLLECTION=collection_name
 ```
 
----
-
-## > Step 3: Scrape SHL Catalog
+## 3) Scrape SHL Catalog
 
 ```bash
 python scraper.py
@@ -76,9 +68,7 @@ python scraper.py
 - `data/shl_assessments_complete.json` (377+ assessments)
 - `data/products.csv`
 
----
-
-## > Step 4: Build Vector Database
+## 4) Build Vector Database
 
 ```bash
 python rag_qdrant.py
@@ -93,9 +83,7 @@ python rag_qdrant.py
 
 **Important:** This uses Gemini's embedding API, not local models. 
 
----
-
-## > Step 5: Start API Server
+## 5) Start API Server
 
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8000 --reload
@@ -123,9 +111,7 @@ curl -X POST http://localhost:8000/recommend \
   -d "{\"text\": \"Java developer with collaboration skills\", \"k\": 10}"
 ```
 
----
-
-## > Step 6: Prepare Test Data
+## 6) Prepare Test Data
 
 ```bash
 python convert_dataset.py
@@ -135,9 +121,7 @@ python convert_dataset.py
 - `data/train_set.csv` (10 queries)
 - `data/test_set.csv` (9 queries)
 
----
-
-## > Step 7: Evaluate Performance
+## 7) Evaluate Performance
 
 In a **new terminal** (keep API running):
 
@@ -150,8 +134,6 @@ python evaluate.py
 2. Tests on test set (9 queries)
 3. Computes metrics: Recall@5, Recall@10, MRR@10, nDCG@10
 4. Generates `data/submission_predictions.csv`
-
----
 
 ## > Final File Structure
 
@@ -173,8 +155,6 @@ shl_recommender/
     ├── test_set.csv
     └── submission_predictions.csv
 ```
-
----
 
 ## > Quick Start (All Commands)
 
